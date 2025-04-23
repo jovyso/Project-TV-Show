@@ -78,7 +78,7 @@ function setupSearchAndFilter(allEpisodes) {
   });
 
   const rootElem = document.getElementById("root");
-  rootElem.before(searchInput, searchResultCount, episodeSelector);
+  rootElem.before(showSelector, episodeSelector, searchInput, searchResultCount);
 
   searchInput.addEventListener("input", () => {
     const searchTerm = searchInput.value.toLowerCase();
@@ -94,9 +94,9 @@ function setupSearchAndFilter(allEpisodes) {
   episodeSelector.addEventListener("change", () => {
     const selectedEpisodeId = episodeSelector.value;
     if (selectedEpisodeId === "all") {
-      makePageForEpisodes(allEpisodes);
+      makePageForEpisodes(cache[`episodes_${showSelector.value}`]);
     } else {
-      const selectedEpisode = allEpisodes.find(
+      const selectedEpisode = cache[`episodes_${showSelector.value}`].find(
         (episode) => episode.id === parseInt(selectedEpisodeId)
       );
       makePageForEpisodes([selectedEpisode]);
