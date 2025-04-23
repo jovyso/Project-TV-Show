@@ -3,6 +3,21 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
+  color: #333;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 #root {
@@ -20,21 +35,30 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   width: 300px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.episode-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .episode-card img {
   width: 100%;
   height: auto;
+  border-bottom: 1px solid #ddd;
 }
 
 .episode-card h3 {
   font-size: 1.2rem;
   margin: 10px;
+  color: #333;
 }
 
 .episode-card p {
   font-size: 0.9rem;
   margin: 10px;
+  color: #555;
 }
 
 .episode-card a {
@@ -42,8 +66,88 @@ body {
   margin: 10px;
   color: #007bff;
   text-decoration: none;
+  font-weight: bold;
 }
 
 .episode-card a:hover {
   text-decoration: underline;
+}
+
+.show-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 300px;
+  margin: 10px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.show-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.show-card img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+}
+
+.show-card h3 {
+  font-size: 1.2rem;
+  margin: 10px;
+  color: #333;
+}
+
+.show-card p {
+  font-size: 0.9rem;
+  margin: 10px;
+  color: #555;
+}
+
+#searchInput, #episodeSelector, #showSelector {
+  margin: 10px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 250px;
+}
+
+#searchInput:focus, #episodeSelector:focus, #showSelector:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+#searchResultCount {
+  margin: 10px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+#showSearchInput {
+  margin: 20px auto;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 300px;
+  display: block;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+#showSearchInput:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+  #root {
+  }
 }
